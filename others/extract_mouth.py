@@ -1,12 +1,12 @@
 import cv2
- 
-#FACESET = "/home/kaushal/Documents/Vedio2Text/jake/external/OpenCV-2.4.3/data/lbpcascades/lbpcascade_frontalface.xml"
-FACESET = "/home/kaushal/Documents/Vedio2Text/jake/external/OpenCV-2.4.3/data/haarcascades/haarcascade_frontalface_default.xml"
-EYESET = "/home/kaushal/Documents/Vedio2Text/jake/external/OpenCV-2.4.3/data/haarcascades/haarcascade_eye.xml"
-MOUTHSET = "/home/kaushal/Documents/Vedio2Text/jake/external/OpenCV-2.4.3/data/haarcascades/haarcascade_mcs_mouth.xml"
+
+XML_PATH = '/home/tj/Downloads/opencv-2.4.7/data/haarcascades/'
+FACESET = XML_PATH + 'haarcascade_frontalface_default.xml'
+EYESET = XML_PATH + 'haarcascade_eye.xml'
+MOUTHSET = XML_PATH + 'haarcascade_mcs_mouth.xml'
 DOWNSCALE = 4
  
-webcam = cv2.VideoCapture('../capture.avi')
+webcam = cv2.VideoCapture(0)
 cv2.namedWindow("preview")
 classifier1 = cv2.CascadeClassifier(FACESET)
 classifier2 = cv2.CascadeClassifier(EYESET)
@@ -31,11 +31,11 @@ while rval:
         #roi_color = img[y:y+h, x:x+w]
         eyes=classifier2.detectMultiScale(roi_gray)
         for (ex,ey,ew,eh) in eyes:
-            cv2.rectangle(roi_gray,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
+            cv2.rectangle(roi_gray,(ex,ey),(ex+ew,ey+eh),(0,255,0))
         moi_gray = frame[y+h/2:y+h,x:x+w]
         mouth=classifier3.detectMultiScale(moi_gray)
         for (mx,my,mw,mh) in mouth:
-            cv2.rectangle(moi_gray,(mx,my),(mx+mw,my+mh),(255,0,0),2)
+            cv2.rectangle(moi_gray,(mx,my),(mx+mw,my+mh),(255,0,0))
  
 
  
