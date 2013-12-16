@@ -1,9 +1,10 @@
 import cv2
  
-TRAINSET = "/home/tj/Downloads/opencv-2.4.7/data/lbpcascades/lbpcascade_frontalface.xml"
+TRAINSET = "/home/kaushal/Documents/Vedio2Text/jake/external/OpenCV-2.4.3/data/lbpcascades/lbpcascade_frontalface.xml"
 DOWNSCALE = 4
  
-webcam = cv2.VideoCapture(0)
+webcam = cv2.VideoCapture('../capture.avi')
+print webcam
 cv2.namedWindow("preview")
 classifier = cv2.CascadeClassifier(TRAINSET)
  
@@ -12,7 +13,7 @@ if webcam.isOpened(): # try to get the first frame
     rval, frame = webcam.read()
 else:
     rval = False
- 
+print rval 
 while rval:
  
     # detect faces and draw bounding boxes
