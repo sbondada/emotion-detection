@@ -1,6 +1,6 @@
 import cv2
  
-TRAINSET = "/usr/share/OpenCV/lbpcascades/lbpcascade_frontalface.xml"
+TRAINSET = "/home/tj/Downloads/opencv-2.4.7/data/lbpcascades/lbpcascade_frontalface.xml"
 DOWNSCALE = 4
  
 webcam = cv2.VideoCapture(0)

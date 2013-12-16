@@ -1,4 +1,4 @@
-import cv
+import cv2.cv as cv
 
 HAAR_CASCADE_PATH = "/home/tj/Downloads/opencv-2.4.7/data/haarcascades/haarcascade_frontalface_default.xml"
 CAMERA_INDEX = 0
