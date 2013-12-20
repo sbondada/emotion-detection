@@ -60,7 +60,7 @@ def extractItem(inputImage,item):
     return faceCropImage
  
 if __name__ == "__main__":
-    im = Image.open('/home/kaushal/Dropbox/github/emotion-detection/666/Image1.png')
+    im = Image.open('/home/kaushal/Dropbox/github/emotion-detection/666/Image3.png')
     im = im.convert("L")
     #resize to given size (if given)
     sz=640,490
