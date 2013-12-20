@@ -70,6 +70,7 @@ if __name__=="__main__":
     inputImage=cv2.imread(DATASET_PATH+'cohn-kanade-images/S005/001/S005_001_00000010.png')
     cv2.namedWindow("preview")
     faceCropImage=extractItem(inputImage,'face')
+    print faceCropImage.shape
     mouthCropImage=extractItem(faceCropImage,'mouth')
     sobelMouth=sobel(mouthCropImage)
     #applying haris corner detection algorithm
